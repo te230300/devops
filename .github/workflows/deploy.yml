@@ -34,10 +34,9 @@ jobs:
 
     # --- 【ステップ3: JARファイルのビルド】 ---
     - name: Build with Maven
-      # ./mvnw を使ってテストをスキップしながらクリーンビルドを行い、JARファイルを生成します
-       run: |
-        chmod +x ./mvnw  # ★追加：実行権限を付与
-        ./mvnw clean package -DskipTests=true
+      run: |
+       chmod +x mvnw
+       ./mvnw clean package -DskipTests=true
 
     # --- 【★追加ステップA: GitHub Actions側の現在のパブリックIPアドレスを取得】 ---
     - name: Get GitHub Actions Public IP
